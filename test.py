@@ -8,7 +8,7 @@ from day_1.day_1 import Day1
 
 
 @pytest.mark.parametrize(
-    "input_path,puzzle_number,implementation,expected",
+    "input_path,puzzle_number,machine,expected",
     [
         pytest.param(
             os.path.join("day_0", "input.txt"),
@@ -42,18 +42,18 @@ from day_1.day_1 import Day1
             os.path.join("day_1", "puzzle.txt"),
             2,
             Day1,
-            45000,
+            204639,
             id="day_1_puzzle_2",
         ),
     ],
 )
-def test_implementation(
+def test_machines(
     input_path: str,
     puzzle_number: int,
-    implementation: ElfMachine,
+    machine: ElfMachine,
     expected: Union[int, str],
 ):
-    machine = implementation()
+    machine = machine()
     test_input = machine.read_input(path=input_path)
 
     if puzzle_number == 1:
@@ -62,4 +62,8 @@ def test_implementation(
     if puzzle_number == 2:
         result = machine.solve_second_puzzle(test_input)
 
-    assert result == expected
+    if expected:
+        assert result == expected
+        print(f"\nResult: {result}")
+    else:
+        print(f"\n(WIP) Result: {result}")
