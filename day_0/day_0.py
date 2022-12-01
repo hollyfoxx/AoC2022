@@ -2,5 +2,8 @@ from elf_machine import ElfMachine
 
 
 class Day0(ElfMachine):
-    def execute(self, input_data: str) -> str:
+    def solve_first_problem(self, input_data: str) -> str:
         return f"{input_data} world"
+
+    def solve_second_problem(self, input_data: str) -> str:
+        raise NotImplementedError
