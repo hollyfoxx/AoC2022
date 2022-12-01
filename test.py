@@ -3,8 +3,8 @@ import os
 import pytest
 
 from elf_machine import ElfMachine
-from day_0.day_0 import Day0
-from day_1.day_1 import Day1
+from day_0.machine import Day0
+from day_1.machine import Day1
 
 
 @pytest.mark.parametrize(
