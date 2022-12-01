@@ -2,7 +2,7 @@ from elf_machine import ElfMachine
 
 
 class Day1(ElfMachine):
-    def solve_first_puzzle(self, input_data: list[str]) -> int:
+    def solve_first_puzzle(self, input_data: str) -> int:
         calories = input_data.split("\n")
 
         most_calories = 0

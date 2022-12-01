@@ -8,7 +8,7 @@ class ElfMachine(ABC):
             return f.read()
 
     @abstractmethod
-    def solve_first_puzzle(self, input_data: Union[str, list[str]]) -> Union[int, str]:
+    def solve_first_puzzle(self, input_data: str]) -> Union[int, str]:
         pass
 
     @abstractmethod
