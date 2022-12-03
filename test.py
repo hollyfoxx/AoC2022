@@ -92,7 +92,7 @@ def test_day_3(
             os.path.join("day_2", "puzzle.txt"),
             2,
             Day2,
-            False,
+            12411,
             id="puzzle_2",
         ),
     ],
