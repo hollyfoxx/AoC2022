@@ -26,20 +26,20 @@ from day_3.machine import Day3
             7967,
             id="puzzle_1",
         ),
-        # pytest.param(
-        #     os.path.join("day_2", "example.txt"),
-        #     2,
-        #     Day2,
-        #     12,
-        #     id="example_2",
-        # ),
-        # pytest.param(
-        #     os.path.join("day_2", "puzzle.txt"),
-        #     2,
-        #     Day2,
-        #     False,
-        #     id="puzzle_2",
-        # ),
+        pytest.param(
+            os.path.join("day_3", "example.txt"),
+            2,
+            Day3,
+            70,
+            id="example_2",
+        ),
+        pytest.param(
+            os.path.join("day_3", "puzzle.txt"),
+            2,
+            Day3,
+            2716,
+            id="puzzle_2",
+        ),
     ],
 )
 def test_day_3(

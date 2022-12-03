@@ -18,4 +18,14 @@ class Day3(ElfMachine):
         return priority_sum
 
     def solve_second_puzzle(self, input_data: str) -> str:
-        return False
+        groups = input_data.split("\n")
+        priority_sum = 0
+        for index in range(0, len(groups), 3):
+            rucksack_a = set(groups[index])
+            rucksack_b = set(groups[index + 1])
+            rucksack_c = set(groups[index + 2])
+
+            badge_letter = rucksack_a & rucksack_b & rucksack_c
+            priority_sum += string.ascii_letters.index(badge_letter.pop()) + 1
+
+        return priority_sum
