@@ -7,6 +7,61 @@ from day_0.machine import Day0
 from day_1.machine import Day1
 from day_2.machine import Day2
 from day_3.machine import Day3
+from day_4.machine import Day4
+
+@pytest.mark.parametrize(
+    "input_path,puzzle_number,machine,expected",
+    [
+        pytest.param(
+            os.path.join("day_4", "example.txt"),
+            1,
+            Day4,
+            2,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_4", "puzzle.txt"),
+            1,
+            Day4,
+            573,
+            id="puzzle_1",
+        ),
+        pytest.param(
+            os.path.join("day_4", "example.txt"),
+            2,
+            Day4,
+            4,
+            id="example_2",
+        ),
+        pytest.param(
+            os.path.join("day_4", "puzzle.txt"),
+            2,
+            Day4,
+            867,
+            id="puzzle_2",
+        ),
+    ],
+)
+def test_day_4(
+    input_path: str,
+    puzzle_number: int,
+    machine: ElfMachine,
+    expected: Union[int, str],
+):
+    machine = machine()
+    test_input = machine.read_input(path=input_path)
+
+    if puzzle_number == 1:
+        result = machine.solve_first_puzzle(test_input)
+
+    if puzzle_number == 2:
+        result = machine.solve_second_puzzle(test_input)
+
+    if expected:
+        assert result == expected
+        print(f"\nResult: {result}")
+    else:
+        print(f"\n(WIP) Result: {result}")
 
 
 @pytest.mark.parametrize(
