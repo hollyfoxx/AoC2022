@@ -39,27 +39,20 @@ from day_10.machine import Day10
             16060,
             id="puzzle_1",
         ),
-        #     pytest.param(
-        #         os.path.join("day_10", "example.txt"),
-        #         2,
-        #         Day10,
-        #         1,
-        #         id="example_2",
-        #     ),
-        #     pytest.param(
-        #         os.path.join("day_10", "example_three.txt"),
-        #         2,
-        #         Day10,
-        #         36,
-        #         id="example_2",
-        #     ),
-        #     pytest.param(
-        #         os.path.join("day_10", "puzzle.txt"),
-        #         2,
-        #         Day10,
-        #         2367,
-        #         id="puzzle_2",
-        #     ),
+        pytest.param(
+            os.path.join("day_10", "example_two.txt"),
+            2,
+            Day10,
+            False,
+            id="example_2",
+        ),
+        pytest.param(
+            os.path.join("day_10", "puzzle.txt"),
+            2,
+            Day10,
+            False,  # BACEKLHF
+            id="puzzle_2",
+        ),
     ],
 )
 def test_day_10(
