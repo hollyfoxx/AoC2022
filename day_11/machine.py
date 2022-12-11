@@ -1,4 +1,4 @@
-from math import floor, gcd
+from math import floor, gcd, lcm
 import string
 
 from elf_machine import ElfMachine
@@ -101,15 +101,15 @@ class Day11(ElfMachine):
 
             parsed_monkeys.append(monkey)
 
+        mod = lcm(*[monkey._test_divisor for monkey in parsed_monkeys])
+
         index = 0
-        round_items = []
-        round_gcd = None
-        for round in range(0, 20):
+        for round in range(0, 10000):
             for monkey in parsed_monkeys:
                 for item in monkey.items:
                     worry_level = monkey.perform_operation(item)
                     dest_monkey_index = monkey.test_item(worry_level)
-                    parsed_monkeys[dest_monkey_index].items.append(worry_level/10)
+                    parsed_monkeys[dest_monkey_index].items.append(worry_level % mod)
                 
                 monkey.items = []
 
