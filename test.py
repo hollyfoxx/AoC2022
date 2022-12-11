@@ -9,6 +9,7 @@ from day_2.machine import Day2
 from day_3.machine import Day3
 from day_4.machine import Day4
 from day_5.machine import Day5
+from day_6.machine import Day6
 from day_7.machine import Day7
 from day_8.machine import Day8
 from day_9.machine import Day9
@@ -230,11 +231,94 @@ def test_day_8(
             2,
             Day7,
             1815525,
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_one.txt"),
+            1,
+            Day6,
+            7,
+            id="example_1",
+        ),
+                pytest.param(
+            os.path.join("day_6", "example_two.txt"),
+            1,
+            Day6,
+            5,
+            id="example_1",
+        ),
+                pytest.param(
+            os.path.join("day_6", "example_three.txt"),
+            1,
+            Day6,
+            6,
+            id="example_1",
+        ),
+                        pytest.param(
+            os.path.join("day_6", "example_four.txt"),
+            1,
+            Day6,
+            10,
+            id="example_1",
+        ),
+                        pytest.param(
+            os.path.join("day_6", "example_five.txt"),
+            1,
+            Day6,
+            11,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "puzzle.txt"),
+            1,
+            Day6,
+            1282,
+            id="puzzle_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_one.txt"),
+            2,
+            Day6,
+            19,
+            id="example_1",
+        ),
+                pytest.param(
+            os.path.join("day_6", "example_two.txt"),
+            2,
+            Day6,
+            23,
+            id="example_1",
+        ),
+                pytest.param(
+            os.path.join("day_6", "example_three.txt"),
+            2,
+            Day6,
+            23,
+            id="example_1",
+        ),
+                        pytest.param(
+            os.path.join("day_6", "example_four.txt"),
+            2,
+            Day6,
+            29,
+            id="example_1",
+        ),
+                        pytest.param(
+            os.path.join("day_6", "example_five.txt"),
+            2,
+            Day6,
+            26,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "puzzle.txt"),
+            2,
+            Day6,
+            False,
             id="puzzle_2",
         ),
     ],
 )
-def test_day_7(
+def test_day_6(
     input_path: str,
     puzzle_number: int,
     machine: ElfMachine,
