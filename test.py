@@ -9,10 +9,12 @@ from day_2.machine import Day2
 from day_3.machine import Day3
 from day_4.machine import Day4
 from day_5.machine import Day5
+from day_6.machine import Day6
 from day_7.machine import Day7
 from day_8.machine import Day8
 from day_9.machine import Day9
 from day_10.machine import Day10
+from day_11.machine import Day11
 from day_12.machine import Day12
 
 
@@ -40,16 +42,72 @@ from day_12.machine import Day12
             29,
             id="example_2",
         ),
+        # commented out bc slow
+        # pytest.param(
+        #     os.path.join("day_12", "puzzle.txt"),
+        #     2,
+        #     Day12,
+        #     377,
+        #     id="puzzle_2",
+        # ),
+    ],
+)
+def test_day_12(
+    input_path: str,
+    puzzle_number: int,
+    machine: ElfMachine,
+    expected: Union[int, str],
+):
+    machine = machine()
+    test_input = machine.read_input(path=input_path)
+
+    if puzzle_number == 1:
+        result = machine.solve_first_puzzle(test_input)
+
+    if puzzle_number == 2:
+        result = machine.solve_second_puzzle(test_input)
+
+    if expected:
+        assert result == expected
+        print(f"\nResult: {result}")
+    else:
+        print(f"\n(WIP) Result: {result}")
+
+
+@pytest.mark.parametrize(
+    "input_path,puzzle_number,machine,expected",
+    [
         pytest.param(
-            os.path.join("day_12", "puzzle.txt"),
-            377,
-            Day12,
-            False,
+            os.path.join("day_11", "example.txt"),
+            1,
+            Day11,
+            10605,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_11", "puzzle.txt"),
+            1,
+            Day11,
+            67830,
+            id="puzzle_1",
+        ),
+        pytest.param(
+            os.path.join("day_11", "example.txt"),
+            2,
+            Day11,
+            2713310158,
+            id="example_2",
+        ),
+        pytest.param(
+            os.path.join("day_11", "puzzle.txt"),
+            2,
+            Day11,
+            15305381442,
             id="puzzle_2",
         ),
     ],
 )
-def test_day_12(
+def test_day_11(
     input_path: str,
     puzzle_number: int,
     machine: ElfMachine,
@@ -286,11 +344,121 @@ def test_day_8(
             2,
             Day7,
             1815525,
-            id="puzzle_2",
         ),
     ],
 )
 def test_day_7(
+    input_path: str,
+    puzzle_number: int,
+    machine: ElfMachine,
+    expected: Union[int, str],
+):
+    machine = machine()
+    test_input = machine.read_input(path=input_path)
+
+    if puzzle_number == 1:
+        result = machine.solve_first_puzzle(test_input)
+
+    if puzzle_number == 2:
+        result = machine.solve_second_puzzle(test_input)
+
+    if expected:
+        assert result == expected
+        print(f"\nResult: {result}")
+    else:
+        print(f"\n(WIP) Result: {result}")
+
+
+@pytest.mark.parametrize(
+    "input_path,puzzle_number,machine,expected",
+    [
+        pytest.param(
+            os.path.join("day_6", "example_one.txt"),
+            1,
+            Day6,
+            7,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_two.txt"),
+            1,
+            Day6,
+            5,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_three.txt"),
+            1,
+            Day6,
+            6,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_four.txt"),
+            1,
+            Day6,
+            10,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_five.txt"),
+            1,
+            Day6,
+            11,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "puzzle.txt"),
+            1,
+            Day6,
+            1282,
+            id="puzzle_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_one.txt"),
+            2,
+            Day6,
+            19,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_two.txt"),
+            2,
+            Day6,
+            23,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_three.txt"),
+            2,
+            Day6,
+            23,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_four.txt"),
+            2,
+            Day6,
+            29,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "example_five.txt"),
+            2,
+            Day6,
+            26,
+            id="example_1",
+        ),
+        pytest.param(
+            os.path.join("day_6", "puzzle.txt"),
+            2,
+            Day6,
+            False,
+            id="puzzle_2",
+        ),
+    ],
+)
+def test_day_6(
     input_path: str,
     puzzle_number: int,
     machine: ElfMachine,
